@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    },
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "ignorePatterns": [
+    "next-env.d.ts",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
+  "rules": {
+    "@typescript-eslint/no-confusing-void-expression": 0,
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/triple-slash-reference": 0,
+    "@typescript-eslint/consistent-type-imports": 0,
+    "@typescript-eslint/consistent-indexed-object-style": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
